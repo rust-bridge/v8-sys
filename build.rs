@@ -20,11 +20,11 @@ fn run(cmd: &mut Command) {
 fn main() {
     let out_dir = env::var("OUT_DIR").unwrap();
 
-    run(Command::new("g++").args(&["src/v8_sys.c", "-c", "-fPIC", "-o"])
-                       .arg(&format!("{}/v8_sys.o", out_dir)));
-    run(Command::new("ar").args(&["crus", "libv8_sys.a", "v8_sys.o"])
+    run(Command::new("g++").args(&["src/v8_glue.c", "-c", "-fPIC", "-o"])
+                       .arg(&format!("{}/v8_glue.o", out_dir)));
+    run(Command::new("ar").args(&["crus", "libv8_glue.a", "v8_glue.o"])
                       .current_dir(&Path::new(&out_dir)));
 
     println!("cargo:rustc-link-search=native={}", out_dir);
-    println!("cargo:rustc-link-lib=static=v8_sys");
+    println!("cargo:rustc-link-lib=static=v8_glue");
 }
