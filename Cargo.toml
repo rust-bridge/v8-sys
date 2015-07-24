@@ -1,0 +1,11 @@
+[package]
+name = "v8-sys"
+version = "0.1.0"
+authors = ["Steve Klabnik <steve@steveklabnik.com>"]
+
+build = "build.rs"
+links = "v8"
+
+[lib]
+name = "v8"
+crate-type = ["dylib"]
