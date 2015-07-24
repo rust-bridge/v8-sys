@@ -1,7 +1,11 @@
 [package]
 name = "v8-sys"
 version = "0.1.0"
-authors = ["Steve Klabnik <steve@steveklabnik.com>"]
+authors = ["Steve Klabnik <steve@steveklabnik.com>", "Ashley Williams <ashley666ashley@gmail.com>"]
+description = "Bindings to V8"
+license = "MIT"
+homepage = "https://github.com/rust-bridge/v8-sys"
+repository = "https://github.com/rust-bridge/v8-sys"
 
 build = "build.rs"
 links = "v8"
